@@ -84,21 +84,37 @@ git apply CMakeLists.patch
 rm -f CMakeLists.patch
 
 # Address compatibility issues with Py_TYPE()
+# from upstream 0289aa9efdf043dd69d65b7d01273e8108dd79f7
 cat << 'EOF' > lcm-python.patch
 diff --git a/lcm-python/module.c b/lcm-python/module.c
+index d03e87c..0cac708 100644
 --- a/lcm-python/module.c
 +++ b/lcm-python/module.c
-@@ -44,6 +44,6 @@
+@@ -9,6 +9,11 @@
+ #define Py_TYPE(ob) (((PyObject *) (ob))->ob_type)
+ #endif
+
++// to support python 3.9.0a3 and earlier
++#if PY_VERSION_HEX < 0x030900A4
++#define Py_SET_TYPE(obj, type) ((Py_TYPE(obj) = (type)), (void)0)
++#endif
++
+ extern PyTypeObject pylcmeventlog_type;
+ extern PyTypeObject pylcm_type;
+ extern PyTypeObject pylcm_subscription_type;
+@@ -43,9 +48,9 @@ init_lcm(void)
+ {
      PyObject *m;
 
-+    Py_SET_TYPE(&pylcmeventlog_type, &PyType_Type);
-+    Py_SET_TYPE(&pylcm_type, &PyType_Type);
-+    Py_SET_TYPE(&pylcm_subscription_type, &PyType_Type);
 -    Py_TYPE(&pylcmeventlog_type) = &PyType_Type;
 -    Py_TYPE(&pylcm_type) = &PyType_Type;
 -    Py_TYPE(&pylcm_subscription_type) = &PyType_Type;
++    Py_SET_TYPE(&pylcmeventlog_type, &PyType_Type);
++    Py_SET_TYPE(&pylcm_type, &PyType_Type);
++    Py_SET_TYPE(&pylcm_subscription_type, &PyType_Type);
 
      MOD_DEF(m, "_lcm", lcmmod_doc, lcmmod_methods);
+
 EOF
 git apply lcm-python.patch
 rm -f lcm-python.patch
