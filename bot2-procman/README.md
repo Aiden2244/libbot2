@@ -3,8 +3,6 @@
 *Process management tools for controlling many processes on one or many
 workstations*
 
-![CI](https://github.com/RobotLocomotion/libbot2/workflows/CI/badge.svg)
-
 Procman is a tool for managing many processes distributed over one or more
 computers. There are two ways to use procman:
 

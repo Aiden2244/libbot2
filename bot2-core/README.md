@@ -2,8 +2,6 @@
 
 *C library with some simple but useful routines and a set of core message types*
 
-![CI](https://github.com/RobotLocomotion/libbot2/workflows/CI/badge.svg)
-
 bot2-core provides a number of functions and data structures that are useful to
 a variety of robotics platforms.
 

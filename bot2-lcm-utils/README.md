@@ -2,8 +2,6 @@
 
 *LCM utility programs (tunnel LCM over TCP, chop or splice log files, etc.)*
 
-![CI](https://github.com/RobotLocomotion/libbot2/workflows/CI/badge.svg)
-
 ## Required Dependencies
 
 * C/C++ compiler that supports C++98 and C99 (Clang or GCC recommended)

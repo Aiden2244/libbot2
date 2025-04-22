@@ -2,8 +2,6 @@
 
 *C library that manages parameter files*
 
-![CI](https://github.com/RobotLocomotion/libbot2/workflows/CI/badge.svg)
-
 ## Required Dependencies
 
 * bot2-core

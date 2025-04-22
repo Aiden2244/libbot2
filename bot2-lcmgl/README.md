@@ -2,8 +2,6 @@
 
 *C library and viewer for transmitting and rendering OpenGL commands over LCM*
 
-![CI](https://github.com/RobotLocomotion/libbot2/workflows/CI/badge.svg)
-
 bot2-lcmgl contains a set of client libraries in C, Java, and Python for
 transmitting OpenGL commands over LCM. It also provides routines for receiving
 and rendering these commands in either a standalone application

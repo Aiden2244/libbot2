@@ -2,8 +2,6 @@
 
 *C library that manages a set of coordinate frames*
 
-![CI](https://github.com/RobotLocomotion/libbot2/workflows/CI/badge.svg)
-
 bot2-frames reads the coordinate frame setup information from a parameter file
 stored by bot2-param.
 

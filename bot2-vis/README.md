@@ -2,8 +2,6 @@
 
 *C library for visualizing data with OpenGL and GTK*
 
-![CI](https://github.com/RobotLocomotion/libbot2/workflows/CI/badge.svg)
-
 ## Required Dependencies
 
 * bot2-core
